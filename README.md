@@ -1,3 +1,3 @@
 # SIIT-automation
 
-UI Test Automation Project (Demo) - Courses part of Informal School of IT
+UI Test Automation Project (Demo) - Part of "Informal School of IT" Courses
