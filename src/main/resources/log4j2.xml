@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<Appenders>
+		<Console name="ConsoleAppender" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="[%-5level] %d{HH:mm:ss.SSS} [%tid] %logger %message %exception%n" />
+			<!-- pattern="[%-5level] %d{HH:mm:ss.SSS} %location %message %exception%n" 
+				/> -->
+		</Console>
+
+		<!-- <File name="TestResults" fileName="Logs/TestResults.html" append="false" -->
+		<!-- ignoreExceptions="false"> -->
+		<!-- filePattern="Logs/TestResults_%d{dd-MMM}_h%d{HH}m%d{mm}s%d{ss}.html" -->
+
+		<!-- <HTMLLayout charset="UTF-8" title="Test Results" fontSize="XSMALL" -->
+		<!-- locationInfo="true"> -->
+		<!-- pattern="%highlight{%t %-5p %c{2} - %m%n}" -->
+		<!-- </HTMLLayout> -->
+
+		<!-- <Policies> -->
+		<!-- <OnStartupTriggeringPolicy /> -->
+		<!-- </Policies> -->
+		<!-- </File> -->
+	</Appenders>
+
+	<Loggers>
+		<!-- <Logger name="com.mambu.loggers" level="trace" additivity="false"> -->
+		<!-- <appender-ref ref="TestResults" level="debug" /> -->
+		<!-- </Logger> -->
+
+		<Root level="debug" additivity="false">
+			<AppenderRef ref="ConsoleAppender" />
+			<!-- <AppenderRef ref="TestResults" /> -->
+		</Root>
+	</Loggers>
+
+
+</Configuration>
