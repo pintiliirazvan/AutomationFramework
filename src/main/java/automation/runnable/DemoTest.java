@@ -8,7 +8,6 @@ import static java.time.Month.AUGUST;
 import java.time.LocalDate;
 
 import org.junit.Test;
-import org.openqa.selenium.By;
 
 import automation.core.SeleneseTest;
 import automation.pom.siit.AdmissionsPage;
@@ -44,7 +43,7 @@ public class DemoTest extends SeleneseTest {
 
 		admissionPage.search("Automation course");
 
-		selectSearchResult("Test Automation Cluj-Napoca");
+		admissionPage.selectSearchResult("Test Automation Cluj-Napoca");
 
 		fillCourseApplicationForm();
 	}
@@ -89,19 +88,6 @@ public class DemoTest extends SeleneseTest {
 		applyToCourseForm.checkTermsAcknowledgement(true);
 
 		// applyToCourseForm.clickSubmitForm(); // would be fun
-	}
-
-	/**
-	 * Select the given result among the results list
-	 * 
-	 * @param searchResultLinkText
-	 *        the link text displayed in the search result
-	 */
-	private void selectSearchResult(String searchResultLinkText) {
-	
-		By coursesResult = By.linkText(searchResultLinkText);
-	
-		getWebDriver().findElement(coursesResult).click();
 	}
 
 }

@@ -1,5 +1,6 @@
 package automation.pom.siit;
 
+import static org.junit.Assert.assertEquals;
 import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfAllElementsLocatedBy;
 
 import org.openqa.selenium.By;
@@ -58,6 +59,24 @@ public class AbstractBaseWebsitePage extends AbstractPageObject {
 		new WaitElement().waitUntil(visibilityOfAllElementsLocatedBy(resultsLocator), 10);
 
 		return this;
+	}
+
+	/**
+	 * Select the given result among the results list and verify that the course title is correct
+	 * 
+	 * @param searchResultLinkText
+	 *        the link text displayed in the search result
+	 */
+	public void selectSearchResult(String searchResultLinkText) {
+
+		By coursesResult = By.linkText(searchResultLinkText);
+
+		driver.findElement(coursesResult).click();
+
+		String expectedTitle = searchResultLinkText.toUpperCase();
+		String actualTitle = driver.findElement(By.tagName("h1")).getText();
+
+		assertEquals("The course title was incorrect", expectedTitle, actualTitle);
 	}
 
 }
